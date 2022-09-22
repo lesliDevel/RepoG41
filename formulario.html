@@ -1,0 +1,33 @@
+<!DOCTYPE html> <!-- -->
+<html lang="es"> <!--Le decimos que las palabras seran en español -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title> <!--Titulo -->
+</head>
+<body>
+    <h1>FORMULARIOS</h1> <!--Titulo -->
+                                    <!--El GET siempre va en mayuscula -->
+    <form action = "../index.html" method="GET"> <!--Ese action,me indica lo que va a pasar cuando ese formulario se ejecute y yo le diga enviar,el method o metodo indica como se deben enviar los datos y tiene dos metodos,el metodo get y el metodo post,que vienen siendo la forma en la que se envia la informacion -->
+            <!--Con action le indicamos que debe hacer luego de que se haga el envio de la informacion,en este caso,dirigirse a la pagina web index -->
+        <h3>Usuario</h3>
+        <label for="nombre">Nombre de usuario:</label> <!--Etiqueta para el ingreso de texto -->
+        <input type="text" name="nombre" id="nombre" maxlength="50"> <!--Con esto creamos el campo de ingreso de texto,por el cual entrara la informacion,es input porque es un campo de entrada,el tipo de ese campo de entrada es text,porque ese es el tipo de dato que queremos recibir y ademas,tengo que darle un nombre a ese campo de entrada,como lo que va a entrar aqui es un nombre de usuario le podemos poner un nombre referente a eso,como "usuario"por ejemplo y el id usualmente se pone igual que el nombre,debemos limitar la longitud de los nombres que se ingresaran ahi para evitar errores,ya que posiblemente este dato se ingrese en una base de datos -->
+    
+    
+        <h3>Contraseña</h3>
+        <label for="clave">Contraseña:</label> <!--Texto -->
+        <input type="password" name="clave" id="clave" maxlength="50"> <!--Campo de ingreso de texto -->
+
+        <h3>Enviar - Boton</h3>
+        <input type="submit" value="Enviar"> <!--Creamos el boton enviar --> <!--El metodo get envia la informacion por medio de la url,recuerden que dijimos que las paginas web,trabajan con protocolos y el protocolo que esta aqui es el protocolo http y ese protocolo define muchas cosas,de como comunicarse,como enviar la informacion,como armar la informacion etc,entre esas cosas como enviar informacion del formulario,la cual se puede enviar de dos maneras,el metodo get y el metodo post,si lo envio por el metodo get va a viajar por el url,y si la envio por el metodo post,va a viajar por las tramas del protocolo,osea,no va a viajar por url,si no que va a viajar por el protocolo -->
+        <!--Luego de que damos en enviar,se nos da acceso a el index o a la pagina web que hayamos definido en form action,es decir,ese form action sirve para decirle a el codigo,que debe hacer una vez que el boton sea presionado y la informacion sea enviada. -->
+    </form> <!--Esta es la etiqueta para formularios --> <!--esta etiqueta configura el inicio y el fin del formulario,esta etiqueta me pide un action,osea,que va a pasar cuando yo le diga enviar a ese formulario,que va a succeder,usualmente ahi se pone codigo JavaScript,o el llamado a una funcion de JavaScript,que procese esa informacion que sea deñ formulario,es decir,que llame,haga lo que sea,que guarde en base de datos etc,pero en este caso no usaremos JavaScript,entonces le vamos a decir que cuando yo le diga enviar a ese formulario,que me vaya a la pagina de index,a la pagina de inicio,esto no va a hacer nada,solo va a mostrar la pagina de inicio,que la pagina de inicio no tiene nada de programacion como para saber que hacer con esos datos que le lleguen, -->
+
+    <!--No es recomendable el envio de informacion sensible como contraseñas por medio de get,debidon a que con el metodo get la informacion se envia por medio de la url,lo que hace que esa informacion se pueda ver en la url,lo cual obviamente no es recomendable -->
+
+
+    
+</body>
+</html>
