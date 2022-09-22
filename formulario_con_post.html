@@ -1,0 +1,91 @@
+<!DOCTYPE html> <!-- -->
+<html lang="es"> <!--Le decimos que las palabras seran en español -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title> <!--Titulo -->
+</head>
+<body>
+    <h1>FORMULARIOS</h1> <!--Titulo -->
+                                    <!--El GET siempre va en mayuscula -->
+    <form action = "../index.html" method="POST"> <!--En este caso vamos a enviar la informacion con post,asi que,la informacion que enviemos en el formulario ya no se vera en la url -->
+            <!--Con action le indicamos que debe hacer luego de que se haga el envio de la informacion,en este caso,dirigirse a la pagina web index -->
+        <h3>Usuario</h3>
+        <label for="nombre">Nombre de usuario:</label> <!--Etiqueta para el ingreso de texto -->
+        <input type="text" name="nombre" id="nombre" maxlength="50" required> <!--Con esto creamos el campo de ingreso de texto,por el cual entrara la informacion,es input porque es un campo de entrada,el tipo de ese campo de entrada es text,porque ese es el tipo de dato que queremos recibir y ademas,tengo que darle un nombre a ese campo de entrada,como lo que va a entrar aqui es un nombre de usuario le podemos poner un nombre referente a eso,como "usuario"por ejemplo y el id usualmente se pone igual que el nombre,debemos limitar la longitud de los nombres que se ingresaran ahi para evitar errores,ya que posiblemente este dato se ingrese en una base de datos -->
+        <!--El required lo que hara sera que impedira que el usuario pueda intentar enviar los datos sin antes haber llenado los campos,es decir,por ejemplo,llenamos el campo usuario,pero no llenamos los demas campos e intentamos enviar,nos va a salir un mensaje recordandonos que debemos rellenar ese campo,basicamente el required hace a el campo a el que se lo apliquemos,obligatorio -->
+    
+        <h3>Contraseña</h3>
+        <label for="clave">Contraseña:</label> <!--Texto -->
+        <input type="password" name="clave" id="clave" maxlength="50" required> <!--Campo de ingreso de texto -->
+
+        <h3>Area de texto</h3> 
+        <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Escriba su comentario"></textarea> <!--Esto lo que hace es poner un cuadro,en el cual el usuario puede ingresar comentarios -->
+        <!--Cols viene siendo el ancho en este caso y rows son el alto en este caso -->
+        
+        <h3>Spinner</h3>
+        <label for="Spinner">Entrada numerico:</label> <!--Titulo -->
+        <input type="number" name="spinner" id="spinner" min="1" max="10" value="1" step="1" required> <!--Ponemos el input y ademas el spinner nos ayudara a determinar que ese campo de texto solo sea numerico,es decir,que si el usuario intenta ingresar un dato de tipo texto,el campo no lo dejara ingresar ese tipo de dato -->
+        <!--Con min establecemos el minimo de numeros que puede recibir ese campo y con max,establecemso el maximo de numeros que puede recibir ese campo,con step esblecemos desde que numero empieza a incrementar -->
+        <!--Tambien hay una manera de poner un texto de referencia para que el usuario sepa lo que debe ingresa,como por ejemplo un "Seleccione el numero:" 
+        lo cual se hace con este comando "placeholder = "[Seleccione el numero:]" ",el cual obviamente va sin las comillas,en este caso,no lo considero necesario y por eso no lo uso-->
+        
+        <br><br>
+        <label for="Spinner">Numero de hijos:</label> <!--Titulo -->
+        <input type="number" name="spinner" id="spinner" min="1" max="12" step="1"  placeholder="[Seleccione el numero de hijos que tiene:]" required> <!--Con este placeholder podemos poner un texto en el cuadro,es decir,es como una descripcion que le explica a el usuario y lo ayuda a saber que debe ingresar ahi-->
+             <!--Con value le decimos que empiece en tal numero,en este caso,en 1 -->
+
+        <h3>Fecha</h3>
+        <label for="Fecha">Fecha:</label>  <!--titulo -->
+        <input type="date" name="fecha" id="fecha" required>  <!--Con esto ponemos un campo con formato de fecha -->
+
+        <h3>Fecha-Hora</h3> 
+        <label for="fecha-hora">Fecha-hora:</label> 
+        <input type="datetime-local" name="fecha-hora" id="fecha-hora" required> <!--este formato tambien es de fecha,pero viene tambien con la hora incluida -->
+
+        <h3>Hora</h3>
+        <label for="hora">Hora</label>
+        <input type="time" name="hora" id="hora" required> <!--Esto me genera un campo con solo el formato de hora -->
+
+        <h3>Semana</h3>
+        <label for="semana">Semana:</label>
+        <input type="week" name="Semana" id="Semana"> <!--Campo con formato de semana -->
+
+        <h3>Genero</h3> 
+        <label for="genero">Genero:</label> <!--con el tipo radio,generamos los opcionales de genero,femenino y masculino -->
+        <input type="radio" name="genero" id="genero" value="F" required> Femenino
+        <input type="radio" name="genero" id="genero" value="F" required> Masculino
+
+        <h3>Ejemplo</h3>
+        <label for="genero">Genero:</label> <!--con el tipo radio,generamos los opcionales de genero,femenino y masculino -->
+        <input type="radio" name="genero" id="genero" value="F" checked required> Femenino <!--el checked hara que se marque por defecto la casilla de F. -->
+        <input type="radio" name="genero" id="genero" value="M" required> Masculino
+
+        <h3>Lista desplegable</h3> <!--Esto es una lista desplegable con diferentes opciones -->
+        <label for="tipo_documento">Tipo de documento</label>
+        <select name = "tipo_documento" id="tipo_documento" required>
+            <option value="TI">Tarjeta de identidad</option>
+            <option value="CC" selected>Cedula de Ciudadania</option> <!--ponemos selected para que esta opcion este por defecto en la pagina web -->
+            <option value="CE">Cedula de Extranjeria</option>
+
+        </select>
+
+        <br><br>
+
+        <h3>Adjuntar un archivo</h3> 
+        <label for="archivo">Archivo</label>
+        <input type="file" name="archivo" id="archivo"> <!--Con esto el usuario puede adjuntar un archivo -->
+
+
+
+        <h3>Enviar - Boton</h3>
+        <input type="submit" value="Enviar"> <!--creamos el boton enviar,en este caso la informacion se envia por medio del formulario y no de la url,por lo cual es mas seguro cuando se pretende enviar informacion sensible como contraseñas por ejemplo--> 
+        <!--Luego de que damos en enviar,se nos da acceso a el index o a la pagina web que hayamos definido en form action,es decir,ese form action sirve para decirle a el codigo,que debe hacer una vez que el boton sea presionado y la informacion sea enviada. -->
+    </form> <!--Esta es la etiqueta para formularios --> <!--esta etiqueta configura el inicio y el fin del formulario,esta etiqueta me pide un action,osea,que va a pasar cuando yo le diga enviar a ese formulario,que va a succeder,usualmente ahi se pone codigo JavaScript,o el llamado a una funcion de JavaScript,que procese esa informacion que sea deñ formulario,es decir,que llame,haga lo que sea,que guarde en base de datos etc,pero en este caso no usaremos JavaScript,entonces le vamos a decir que cuando yo le diga enviar a ese formulario,que me vaya a la pagina de index,a la pagina de inicio,esto no va a hacer nada,solo va a mostrar la pagina de inicio,que la pagina de inicio no tiene nada de programacion como para saber que hacer con esos datos que le lleguen, -->
+
+    <!--Este es el metodo recomendado de envio de informacion sensible,es decir,el POST,ya que como dijimos anteriormente,el get no es recomendable,porque la informacion se envia por el url,lo cual muestra esa informacion -->
+    <!--Se recomienda usar el protocolo https,para seguridad,debido a que este protocolo encripta la informacion -->
+    
+</body>
+</html>
